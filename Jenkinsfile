@@ -73,12 +73,12 @@ pipeline {
                 }
             }
         }
-        stage('Build App Image') {
-            steps {
-                script{
-                    dockerImage = docker.build registry + ":v$BUILD_NUMBER"
-                }
+     stage('Build App Image') {
+        steps {
+            script{
+                 dockerImage = docker.build registry + ":v$BUILD_NUMBER"
             }
+        }
             stage('Upload Image'){
                 steps {
                     script {
